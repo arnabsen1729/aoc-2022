@@ -2,22 +2,12 @@
 PART1_RES = 95437
 PART2_RES = 24933642
 
-# class FileSystem:
-#     def __init__(self):
-#         self.root = Node('/', True, 0, [], None)
-#         self.inode_to_node = {self.root.inode: self.root}
-
-# Node represents a File/Dir in the file system
-
-
 class Node:
     def __init__(self, name: str, isDirectory: bool, size: int = 0) -> None:
         self.name = name
         self.isDirectory = isDirectory
         self.size = size
         self.children = []
-        # self.inode = uuid.uuid4()
-        # self.parent_inode = None
 
         if not self.isDirectory:
             assert self.children == []
