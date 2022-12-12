@@ -84,7 +84,7 @@ def main():
     MOD = 1
     f = open('input.txt')
     data = parse(f)
-    print('Part 1:', solve(data))
+    print('Part 2:', solve(data))
     f.close()
 
 

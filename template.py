@@ -11,13 +11,15 @@ def main():
     f = open('test.txt')
     lines = f.readlines()
     data = parse(lines)
-    assert solve(data) == ANSWER
+    res = solve(data)
+    print('Test :', res)
+    assert res == ANSWER
     f.close()
 
     f = open('input.txt')
     lines = f.readlines()
     data = parse(lines)
-    print('Part 1:', solve(data))
+    print('Final :', solve(data))
     f.close()
 
 if __name__ == '__main__':
