@@ -1,7 +1,7 @@
 ANSWER = 0
 
-def parse(lines):
-    return lines
+def parse(f):
+    return ''
 
 def solve(data):
     return 0
@@ -9,16 +9,14 @@ def solve(data):
 def main():
     global f
     f = open('test.txt')
-    lines = f.readlines()
-    data = parse(lines)
+    data = parse(f)
     res = solve(data)
     print('Test :', res)
     assert res == ANSWER
     f.close()
 
     f = open('input.txt')
-    lines = f.readlines()
-    data = parse(lines)
+    data = parse(f)
     print('Final :', solve(data))
     f.close()
 

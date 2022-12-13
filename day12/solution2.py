@@ -1,7 +1,9 @@
 ANSWER = 27
 
+
 def parse(lines):
     return [line.strip() for line in lines]
+
 
 def get_start(graph):
     start_pos = []
@@ -12,11 +14,13 @@ def get_start(graph):
 
     return start_pos
 
+
 def get_end(graph):
     for i in range(len(graph)):
         for j in range(len(graph[i])):
             if graph[i][j] == 'E':
                 return (i, j)
+
 
 def get_elevation(graph):
     m = len(graph)
@@ -32,6 +36,7 @@ def get_elevation(graph):
                 elevation[i][j] = ord(graph[i][j])-ord('a')
 
     return elevation
+
 
 def solve(graph):
     m = len(graph)
@@ -61,20 +66,21 @@ def solve(graph):
             ny = y + dy
             if nx < 0 or nx >= m or ny < 0 or ny >= n:
                 continue
-            
+
             # check if elevation difference is less than 2
             if elevation[nx][ny] - elevation[x][y] >= 2:
                 continue
-            
+
             # check if visited
             if visited[nx][ny]:
                 continue
-        
+
             distance[nx][ny] = distance[x][y] + 1
             visited[nx][ny] = True
             queue.append((nx, ny))
 
     return -1
+
 
 def main():
     global f
@@ -91,6 +97,7 @@ def main():
     data = parse(lines)
     print('Final :', solve(data))
     f.close()
+
 
 if __name__ == '__main__':
     main()
